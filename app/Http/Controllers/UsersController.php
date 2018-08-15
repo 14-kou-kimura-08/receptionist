@@ -25,13 +25,27 @@ class UsersController extends Controller
     }
 
     /**
-     * Notification to specific user.
+     * Notification to Specific User.
      *
      *
      * @return Response
      */
     public function notification($id)
     {
+        $user = $this->user->find($id);
+        $user->notify(new \App\Notifications\CallFromReceptionist($user));
+        return view('thanks');
+    }
+
+    /**
+     * Notification to Corporate Group.
+     *
+     *
+     * @return Response
+     */
+    public function notificationToCorporate()
+    {
+        $id   = $this->user->where('last_name', '木村')->value('id');
         $user = $this->user->find($id);
         $user->notify(new \App\Notifications\CallFromReceptionist($user));
         return view('thanks');

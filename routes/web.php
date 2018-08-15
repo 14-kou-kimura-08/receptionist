@@ -22,3 +22,4 @@ Route::get('/', function () {
 Route::get('/groups', 'GroupsController@index')->name('groups.index');
 Route::get('/users/{group_id}', 'UsersController@index')->where('group_id', '[0-9]+')->name('users.index');
 Route::get('/notification/{id}', 'UsersController@notification')->where('id', '[0-9]+')->name('users.notification');
+Route::get('/corporate', 'UsersController@notificationToCorporate')->name('users.corporate');
