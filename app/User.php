@@ -35,7 +35,7 @@ class User extends Authenticatable
         return $this->belongsTo('App\Group');
     }
 
-    /** Route notifications for the Slack channel.
+    /* Route notifications for the Slack channel.
      *
      * @param  \Illuminate\Notifications\Notification  $notification
      * @return string
@@ -43,4 +43,5 @@ class User extends Authenticatable
     public function routeNotificationForSlack()
     {
         return env('SLACK_WEBHOOK_URL');
+    }
 }
