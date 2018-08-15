@@ -28,6 +28,7 @@ class User extends Authenticatable
     ];
 
     /**
+
      * Get the gropu that owns the user.
      */
     public function group()

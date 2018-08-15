@@ -1,5 +1,6 @@
 <?php
-
+use App\User;
+use App\Notifications\CallFromReceptionist;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,6 +13,9 @@
 */
 
 Route::get('/', function () {
+    // NOTE コメントアウトを外せば、’/’に遷移するとSlack通知ができる
+    // $user = App\User::find(1);
+    // $user->notify(new \App\Notifications\CallFromReceptionist($user));
     return view('welcome');
 });
 
