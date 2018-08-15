@@ -11,8 +11,8 @@
                 </div>
                 <div class="links">
                     <a href="{{ route('groups.index') }}">お打ち合わせ</a>
-                    <a href="https://laracasts.com">面談</a>
-                    <a href="https://laravel-news.com">お届け/集荷</a>
+                    <a href="{{ route('users.corporate') }}">面談</a>
+                    <a href="">お届け/集荷</a>
                 </div>
             </div>
         </div>
