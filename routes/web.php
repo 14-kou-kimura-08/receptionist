@@ -15,4 +15,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/users', 'UsersController@index')->name('users.index');
+Route::get('/groups', 'GroupsController@index')->name('groups.index');
+Route::get('/users/{group_id}', 'UsersController@index')->where('group_id', '[0-9]+')->name('users.index');

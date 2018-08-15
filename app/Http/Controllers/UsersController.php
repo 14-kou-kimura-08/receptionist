@@ -18,9 +18,22 @@ class UsersController extends Controller
      *
      * @return Response
      */
-    public function index()
+    public function index($group_id)
     {
-        $users = $this->user->all();
+        $users = $this->user->where('group_id', $group_id)->get();
         return view('users.index', ['users' => $users]);
+    }
+
+    /**
+     * Notification to specific user.
+     *
+     *
+     * @return Response
+     */
+    public function notification($id)
+    {
+        $slackName = $this->user->where('id', $id)->get();
+        
+        return view('thanks');
     }
 }

@@ -26,4 +26,12 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+     * Get the gropu that owns the user.
+     */
+    public function group()
+    {
+        return $this->belongsTo('App\Group');
+    }
 }
