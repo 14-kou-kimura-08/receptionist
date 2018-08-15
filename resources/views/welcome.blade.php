@@ -83,7 +83,7 @@
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">お打ち合わせ</a>
+                    <a href="{{ route('groups.index') }}">お打ち合わせ</a>
                     <a href="https://laracasts.com">面談</a>
                     <a href="https://laravel-news.com">荷物お届け/集荷</a>
                 </div>

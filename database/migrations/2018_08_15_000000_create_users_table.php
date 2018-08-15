@@ -19,10 +19,15 @@ class CreateUsersTable extends Migration
             $table->string('first_name');
             $table->string('last_furigana');
             $table->string('first_furigana');
-            $table->integer('group_id');
+            $table->unsignedInteger('group_id');
             $table->string('slack_name');
             $table->rememberToken();
             $table->timestamps();
+
+            $table->foreign('group_id')
+                    ->references('id')
+                    ->on('groups')
+                    ->onDelete('cascade');
         });
     }
 

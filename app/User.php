@@ -28,7 +28,15 @@ class User extends Authenticatable
     ];
 
     /**
-     * Route notifications for the Slack channel.
+
+     * Get the gropu that owns the user.
+     */
+    public function group()
+    {
+        return $this->belongsTo('App\Group');
+    }
+
+    /* Route notifications for the Slack channel.
      *
      * @param  \Illuminate\Notifications\Notification  $notification
      * @return string
