@@ -17,7 +17,8 @@ Route::get('/', function () {
     // $user = App\User::find(1);
     // $user->notify(new \App\Notifications\CallFromReceptionist($user));
     return view('welcome');
-});
+})->name('welcome');
 
 Route::get('/groups', 'GroupsController@index')->name('groups.index');
 Route::get('/users/{group_id}', 'UsersController@index')->where('group_id', '[0-9]+')->name('users.index');
+Route::get('/notification/{id}', 'UsersController@notification')->where('id', '[0-9]+')->name('users.notification');
