@@ -32,15 +32,8 @@ class UsersController extends Controller
      */
     public function notification($id)
     {
-        // $user = $this->user->find('id', $id);
         $user = $this->user->find($id);
         $user->notify(new \App\Notifications\CallFromReceptionist($user));
         return view('thanks');
-
-        setTimeout("redirect()", 3);
-    }
-
-    public function redirect(){
-        return view('welcome');
     }
 }
