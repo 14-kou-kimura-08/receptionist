@@ -1,3 +1,3 @@
 @foreach ($users as $user)
-    <p>{{$user->last_name}} {{$user->first_name}}<br>({{$user->last_furigana}} {{$user->first_furigana}})</p>
+    <a href="{{ route('users.notification', ['id' => $user->id]) }}">{{$user->last_name}} {{$user->first_name}}</a>
 @endforeach

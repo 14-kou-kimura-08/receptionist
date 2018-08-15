@@ -32,8 +32,15 @@ class UsersController extends Controller
      */
     public function notification($id)
     {
-        $slackName = $this->user->where('id', $id)->get();
-        
+        // $user = $this->user->find('id', $id);
+        $user = $this->user->find($id);
+        $user->notify(new \App\Notifications\CallFromReceptionist($user));
         return view('thanks');
+
+        setTimeout("redirect()", 3);
+    }
+
+    public function redirect(){
+        return view('welcome');
     }
 }
