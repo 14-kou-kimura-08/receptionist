@@ -24,11 +24,11 @@ class DatabaseSeeder extends Seeder
         ]);
 
         User::insert([
-            ["id" => 1, "last_name" => "木村", "first_name" => "浩一朗", "last_furigana" => "キムラ", "first_furigana" => "コウイチロウ", "group_id" => 1, "slack_name" => "Kimurin", ],
-            ["id" => 2, "last_name" => "濱崎", "first_name" => "竜太", "last_furigana" => "ハマサキ", "first_furigana" => "リュウタ", "group_id" => 1, "slack_name" => "", ],
-            ["id" => 3, "last_name" => "佐々木", "first_name" => "亮祐", "last_furigana" => "ササキ", "first_furigana" => "リョウスケ", "group_id" => 1, "slack_name" => "", ],
-            ["id" => 4, "last_name" => "廣瀬", "first_name" => "健", "last_furigana" => "ヒロセ", "first_furigana" => "タケル", "group_id" => 1, "slack_name" => "", ],
-            ["id" => 5, "last_name" => "落合", "first_name" => "めぐみ", "last_furigana" => "オチアイ", "first_furigana" => "メグミ", "group_id" => 1, "slack_name" => "", ],
+            ["id" => 1, "last_name" => "木村", "first_name" => "浩一朗", "last_furigana" => "キムラ", "first_furigana" => "コウイチロウ", "email" => "kimura@kurashicom.jp", "password" => Hash::make("kimura@kurashicom.jp"), "group_id" => 1, "slack_name" => "Kimurin", ],
+            ["id" => 2, "last_name" => "濱崎", "first_name" => "竜太", "last_furigana" => "ハマサキ", "first_furigana" => "リュウタ", "email" => "hamasaki@kurashicom.jp", "password" => Hash::make("hamasaki@kurashicom.jp"), "group_id" => 1, "slack_name" => "", ],
+            ["id" => 3, "last_name" => "佐々木", "first_name" => "亮祐", "last_furigana" => "ササキ", "first_furigana" => "リョウスケ", "email" => "sasaki@kurashicom.jp", "password" => Hash::make("sasaki@kurashicom.jp"), "group_id" => 1, "slack_name" => "", ],
+            ["id" => 4, "last_name" => "廣瀬", "first_name" => "健", "last_furigana" => "ヒロセ", "first_furigana" => "タケル", "email" => "hirose@kurashicom.jp", "password" => Hash::make("hirose@kurashicom.jp"), "group_id" => 1, "slack_name" => "", ],
+            ["id" => 5, "last_name" => "落合", "first_name" => "めぐみ", "last_furigana" => "オチアイ", "first_furigana" => "メグミ", "email" => "ochiai@kurashicom.jp", "password" => Hash::make("ochiai@kurashicom.jp"), "group_id" => 1, "slack_name" => "", ],
         ]);
     }
 }

@@ -19,6 +19,8 @@ class CreateUsersTable extends Migration
             $table->string('first_name');
             $table->string('last_furigana');
             $table->string('first_furigana');
+            $table->string('email')->unique();
+            $table->string('password');
             $table->unsignedInteger('group_id');
             $table->string('slack_name');
             $table->rememberToken();
