@@ -11,7 +11,7 @@
                 </div>
                 <div class="links">
                     <a href="{{ route('groups.index') }}">お打ち合わせ</a>
-                    <a href="{{ route('users.corporate') }}">面談</a>
+                    <a href="{{ route('members.corporate') }}">面談</a>
                     <a href="">お届け/集荷</a>
                 </div>
             </div>
