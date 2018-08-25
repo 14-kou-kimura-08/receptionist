@@ -1,5 +1,4 @@
 <?php
-use App\User;
 use App\Notifications\CallFromReceptionist;
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +19,6 @@ Route::get('/', function () {
 })->name('welcome');
 
 Route::get('/groups', 'GroupsController@index')->name('groups.index');
-Route::get('/users/{group_id}', 'UsersController@index')->where('group_id', '[0-9]+')->name('users.index');
-Route::get('/notification/{id}', 'UsersController@notification')->where('id', '[0-9]+')->name('users.notification');
-Route::get('/corporate', 'UsersController@notificationToCorporate')->name('users.corporate');
+Route::get('/members/{group_id}', 'MembersController@index')->where('group_id', '[0-9]+')->name('members.index');
+Route::get('/notification/{id}', 'MembersController@notification')->where('id', '[0-9]+')->name('members.notification');
+Route::get('/corporate', 'MembersController@notificationToCorporate')->name('members.corporate');

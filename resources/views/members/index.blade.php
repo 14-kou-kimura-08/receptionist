@@ -1,6 +1,6 @@
 @extends('layouts.layouts')
 
-@section('css', '/css/users.css')
+@section('css', '/css/members.css')
 
 @section('content')
     <div class="flex-center position-ref full-height">
@@ -9,8 +9,8 @@
                 担当者の名前を教えてください
             </div>
             <div class="links">
-                @foreach ($users as $user)
-                    <a href="{{ route('users.notification', ['id' => $user->id]) }}">{{$user->last_name}} {{$user->first_name}}</a>
+                @foreach ($members as $member)
+                    <a href="{{ route('members.notification', ['id' => $member->id]) }}">{{$member->last_name}} {{$member->first_name}}</a>
                 @endforeach
             </div>
             <a href="{{ route('groups.index') }}" class="return">１つ前に戻る</a>
