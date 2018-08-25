@@ -2,7 +2,7 @@
 
 namespace App\Notifications;
 
-use App\User;
+use App\Member;
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -21,9 +21,9 @@ class CallFromReceptionist extends Notification
      *
      * @return void
      */
-     public function __construct(User $user)
+     public function __construct(Member $member)
      {
-        $this->user = $user;
+        $this->member = $member;
      }
 
     /**
@@ -44,6 +44,6 @@ class CallFromReceptionist extends Notification
      public function toSlack($notifiable)
     {
         return (new SlackMessage)
-        ->content($this->user->last_name . "さん お客様がいらっしゃいました");
+        ->content($this->member->last_name . "さん お客様がいらっしゃいました");
     }
 }
