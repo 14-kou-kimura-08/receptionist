@@ -30,5 +30,9 @@ class DatabaseSeeder extends Seeder
             ["id" => 4, "last_name" => "廣瀬", "first_name" => "健", "last_furigana" => "ヒロセ", "first_furigana" => "タケル", "email" => "hirose@kurashicom.jp", "password" => Hash::make("hirose@kurashicom.jp"), "group_id" => 1, "slack_name" => "", ],
             ["id" => 5, "last_name" => "落合", "first_name" => "めぐみ", "last_furigana" => "オチアイ", "first_furigana" => "メグミ", "email" => "ochiai@kurashicom.jp", "password" => Hash::make("ochiai@kurashicom.jp"), "group_id" => 1, "slack_name" => "", ],
         ]);
+
+        $this->call([
+        MembersTableSeeder::class,
+    ]);
     }
 }
