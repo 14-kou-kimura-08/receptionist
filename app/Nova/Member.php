@@ -4,25 +4,26 @@ namespace App\Nova;
 
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Panel;
 use Illuminate\Http\Request;
 use Laravel\Nova\Http\Requests\NovaRequest;
-use Laravel\Nova\Fields\HasMany;
+use Laravel\Nova\Fields\BelongsTo;
 
-class Group extends Resource
+class Member extends Resource
 {
     /**
      * The model the resource corresponds to.
      *
      * @var string
      */
-    public static $model = 'App\Group';
+    public static $model = 'App\Member';
 
     /**
      * The single value that should be used to represent the resource when being displayed.
      *
      * @var string
      */
-    public static $title = 'name';
+    public static $title = 'id';
 
     /**
      * The columns that should be searched.
@@ -43,10 +44,29 @@ class Group extends Resource
     {
         return [
             ID::make()->sortable(),
-            Text::make('グループ名', 'name'),
-            Text::make('グループSlack', 'slack_name'),
+            Text::make('名前', function () {
+                return $this->last_name.' '.$this->first_name;
+            }),
+            Text::make('フリガナ', function () {
+                return $this->last_furigana.' '.$this->first_furigana;
+            }),
 
-            HasMany::make('Members'),
+            new Panel('Group Information', $this->groupFields()),
+        ];
+    }
+
+    /**
+     * Get the group fields for the resource.
+     *
+     * @return array
+     */
+    protected function groupFields()
+    {
+        return [
+            BelongsTo::make('Group')->hideFromIndex(),
+            Text::make('グループSlack', function () {
+                return $this->group->slack_name;
+            })->hideFromIndex(),
         ];
     }
 
@@ -93,4 +113,11 @@ class Group extends Resource
     {
         return [];
     }
+
+    /**
+     * The relationships that should be eager loaded on index queries.
+     *
+     * @var array
+     */
+    public static $with = ['group'];
 }
