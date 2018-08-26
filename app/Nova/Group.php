@@ -3,8 +3,10 @@
 namespace App\Nova;
 
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Text;
 use Illuminate\Http\Request;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Laravel\Nova\Fields\HasMany;
 
 class Group extends Resource
 {
@@ -20,7 +22,7 @@ class Group extends Resource
      *
      * @var string
      */
-    public static $title = 'id';
+    public static $title = 'name';
 
     /**
      * The columns that should be searched.
@@ -41,6 +43,10 @@ class Group extends Resource
     {
         return [
             ID::make()->sortable(),
+            Text::make('グループ名', 'name'),
+            Text::make('グループSlack', 'slack_name'),
+
+            HasMany::make('Members'),
         ];
     }
 

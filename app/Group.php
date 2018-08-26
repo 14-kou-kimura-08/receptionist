@@ -9,7 +9,7 @@ class Group extends Model
     /**
      * Get the users for the group.
      */
-    public function users()
+    public function members()
     {
         return $this->hasMany('App\Member');
     }
