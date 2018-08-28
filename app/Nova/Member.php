@@ -23,7 +23,27 @@ class Member extends Resource
      *
      * @var string
      */
-    public static $title = 'id';
+    public static $title = 'last_name';
+
+    /**
+     * Get the value that should be displayed to represent the resource.
+     *
+     * @return string
+     */
+    public function title()
+    {
+        return $this->last_name.' '.$this->first_name;;
+    }
+
+    /**
+     * Get the search result subtitle for the resource.
+     *
+     * @return string
+     */
+    public function subtitle()
+    {
+        return $this->group->name;
+    }
 
     /**
      * The columns that should be searched.
@@ -31,7 +51,7 @@ class Member extends Resource
      * @var array
      */
     public static $search = [
-        'id',
+        'id', 'last_name', 'first_name', 'last_furigana', 'first_furigana',
     ];
 
     /**

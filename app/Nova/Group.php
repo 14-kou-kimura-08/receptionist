@@ -30,7 +30,7 @@ class Group extends Resource
      * @var array
      */
     public static $search = [
-        'id',
+        'id', 'name', 'slack_name',
     ];
 
     /**

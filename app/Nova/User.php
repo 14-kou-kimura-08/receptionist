@@ -18,6 +18,13 @@ class User extends Resource
     public static $model = 'App\\User';
 
     /**
+     * Indicates if the resource should be globally searchable.
+     *
+     * @var bool
+     */
+    public static $globallySearchable = false;
+
+    /**
      * The single value that should be used to represent the resource when being displayed.
      *
      * @var string
