@@ -46,10 +46,16 @@ class Member extends Resource
             ID::make()->sortable(),
             Text::make('名前', function () {
                 return $this->last_name.' '.$this->first_name;
-            }),
+            })->exceptOnForms(),
             Text::make('フリガナ', function () {
                 return $this->last_furigana.' '.$this->first_furigana;
-            }),
+            })->exceptOnForms(),
+
+            Text::make('苗字', 'last_name')->onlyOnForms(),
+            Text::make('名前', 'first_name')->onlyOnForms(),
+            Text::make('フリガナ（苗字）', 'last_furigana')->onlyOnForms(),
+            Text::make('フリガナ（名前）', 'first_furigana')->onlyOnForms(),
+            Text::make('slack_id')->onlyOnForms(),
 
             new Panel('Group Information', $this->groupFields()),
         ];
@@ -64,9 +70,6 @@ class Member extends Resource
     {
         return [
             BelongsTo::make('Group')->hideFromIndex(),
-            Text::make('グループSlack', function () {
-                return $this->group->slack_name;
-            })->hideFromIndex(),
         ];
     }
 
