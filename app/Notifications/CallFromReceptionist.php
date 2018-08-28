@@ -44,6 +44,7 @@ class CallFromReceptionist extends Notification
      public function toSlack($notifiable)
     {
         return (new SlackMessage)
-        ->content($this->member->last_name . "さん お客様がいらっしゃいました");
+        ->to("#" . $this->member->group->slack_name)
+        ->content("<@" . $this->member->slack_id . "> お客様がいらっしゃいました");
     }
 }
