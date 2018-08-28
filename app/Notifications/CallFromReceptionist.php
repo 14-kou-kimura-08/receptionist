@@ -43,6 +43,8 @@ class CallFromReceptionist extends Notification
      */
      public function toSlack($notifiable)
     {
+        // NOTE 必ずGroupに属している必要がある。
+        // NOTE 必ずslack_idを保持している必要がある。
         return (new SlackMessage)
         ->to("#" . $this->member->group->slack_name)
         ->content("<@" . $this->member->slack_id . "> お客様がいらっしゃいました");
