@@ -7,6 +7,7 @@ use Laravel\Nova\Cards\Help;
 use Illuminate\Support\Facades\Gate;
 use Laravel\Nova\NovaApplicationServiceProvider;
 use App\Nova\Metrics\Members;
+use App\Nova\Metrics\Groups;
 
 class NovaServiceProvider extends NovaApplicationServiceProvider
 {
@@ -58,6 +59,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     {
         return [
             new Members,
+            new Groups,
             new Help,
         ];
     }
