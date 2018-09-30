@@ -60,7 +60,6 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
         return [
             new Members,
             new Groups,
-            new Help,
         ];
     }
 
