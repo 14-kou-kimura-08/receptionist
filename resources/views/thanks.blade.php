@@ -3,7 +3,7 @@
 @section('css', '/css/thanks.css')
 
 @section('head')
-    <meta http-equiv="refresh" content="5;URL=http://127.0.0.1:8000">
+    <meta http-equiv="refresh" content="15;URL=http://127.0.0.1:8000">
 @endsection
 
 @section('content')
