@@ -14,7 +14,7 @@
                 @endforeach
             </div>
             {{ $members->links() }}
-            <a href="{{ route('groups.index') }}" class="return">１つ前に戻る</a>
+            <a href="{{ route('groups.index') }}" class="return">グループ選択に戻る</a>
         </div>
     </div>
 @endsection
