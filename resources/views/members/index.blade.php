@@ -13,7 +13,8 @@
                     <a href="{{ route('members.notification', ['id' => $member->id]) }}">{{$member->last_name}} {{$member->first_name}}</a>
                 @endforeach
             </div>
-            <a href="{{ route('groups.index') }}" class="return">１つ前に戻る</a>
+            {{ $members->links() }}
+            <a href="{{ route('groups.index') }}" class="return">グループ選択に戻る</a>
         </div>
     </div>
 @endsection

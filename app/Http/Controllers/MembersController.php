@@ -20,7 +20,7 @@ class MembersController extends Controller
      */
     public function index($group_id)
     {
-        $members = $this->member->where('group_id', $group_id)->get();
+        $members = $this->member->where('group_id', $group_id)->simplePaginate(6);
         return view('members.index', ['members' => $members]);
     }
 

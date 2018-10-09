@@ -20,7 +20,7 @@ class GroupsTableSeeder extends Seeder
             ["id" => 5, "name" => "デザイン", "slack_name" => "", ],
             ["id" => 6, "name" => "事業開発", "slack_name" => "", ],
             ["id" => 7, "name" => "コミュニケーション", "slack_name" => "", ],
-            ["id" => 8, "name" => "テクノロジー", "slack_name" => "", ],
+            ["id" => 8, "name" => "テクノロジー", "slack_name" => "キムプロテスト", ],
         ]);
     }
 }

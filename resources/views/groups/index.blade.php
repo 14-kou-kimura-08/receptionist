@@ -13,7 +13,7 @@
                     <a href="{{ route('members.index', ['group_id' => $group->id]) }}">{{$group->name}}</a>
                 @endforeach
             </div>
-            <a href="{{ route('welcome') }}" class="return">１つ前に戻る</a>
+            <a href="{{ route('welcome') }}" class="return">TOPページに戻る</a>
         </div>
     </div>
 @endsection
