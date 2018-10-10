@@ -45,7 +45,7 @@ class MembersController extends Controller
      */
     public function notificationToCorporate()
     {
-        $id     = $this->member->where('last_name', '木村')->value('id');
+        $id     = $this->member->where('last_name', '筒井')->value('id');
         $member = $this->member->find($id);
         $member->notify(new \App\Notifications\CallFromReceptionist($member));
         return view('thanks');
